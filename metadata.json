@@ -1,5 +1,5 @@
 {
-  "name": "Diamond Dental Clinic DrSaleem Management Dashboard",
+  "name": "Dr Saleem Andraws - Clinic Management",
   "description": "A comprehensive dashboard for managing a dental clinic, including patient records, appointments, and financial tracking. Features a QR code scanner for quick patient identification.",
   "requestFramePermissions": [
     "camera"

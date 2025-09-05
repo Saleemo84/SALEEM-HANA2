@@ -1,26 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dr. Saleem Dental Clinic</title>
+    <title>Dr Saleem Andraws Dental Clinic</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf-autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.3/qrcode.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
             colors: {
-              primary: '#1976D2',
-              'primary-dark': '#1565C0',
-              'primary-light': '#BBDEFB',
-              secondary: '#FF4081',
-              accent: '#00BFA5',
-              success: '#4CAF50',
-              warning: '#FFC107',
-              error: '#F44336',
+              primary: {
+                DEFAULT: '#8b5cf6', // violet-500
+                light: '#ede9fe',   // violet-100
+                dark: '#6d28d9',    // violet-700
+              },
+              accent: {
+                DEFAULT: '#38bdf8', // sky-400
+                dark: '#0ea5e9',    // sky-500
+              },
+              success: '#22c55e',
+              warning: '#f59e0b',
+              error: '#ef4444',
+            },
+            keyframes: {
+              pulseNote: {
+                '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+                '50%': { transform: 'scale(1.25)', opacity: '0.75' },
+              },
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(5px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: 0 },
+                '100%': { transform: 'translateY(0)', opacity: 1 },
+              }
+            },
+            animation: {
+              pulseNote: 'pulseNote 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              fadeIn: 'fadeIn 0.4s ease-out forwards',
+              slideUp: 'slideUp 0.5s ease-out forwards',
             }
           }
         }
@@ -37,7 +68,7 @@
 }
 </script>
 </head>
-  <body class="bg-gray-100">
+  <body class="bg-slate-50 font-sans">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

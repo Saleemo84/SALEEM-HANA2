@@ -16,20 +16,27 @@ const FinanceChart: React.FC = () => {
         <div className="h-80 w-full mt-4">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={data} margin={{ top: 5, right: 20, left: 50, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                    <XAxis dataKey="name" tick={{ fill: '#6B7280' }} />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                    <XAxis dataKey="name" tick={{ fill: '#64748b' }} axisLine={{ stroke: '#cbd5e1' }} tickLine={false} />
                     <YAxis 
                         tickFormatter={(value) => new Intl.NumberFormat('en-US').format(value as number)}
-                        tick={{ fill: '#6B7280' }}
+                        tick={{ fill: '#64748b' }}
                         width={100}
+                        axisLine={false}
+                        tickLine={false}
                     />
                     <Tooltip 
                         formatter={(value) => `${(value as number).toLocaleString()} IQD`}
-                        cursor={{fill: 'rgba(239, 246, 255, 0.5)'}}
+                        cursor={{fill: 'rgba(139, 92, 246, 0.1)'}}
+                        contentStyle={{
+                            background: 'white',
+                            border: '1px solid #e2e8f0',
+                            borderRadius: '0.5rem',
+                        }}
                     />
-                    <Legend />
-                    <Bar dataKey="income" fill="#1976D2" name="Income (IQD)" radius={[4, 4, 0, 0]} />
-                    <Bar dataKey="expenditure" fill="#F44336" name="Expenditure (IQD)" radius={[4, 4, 0, 0]} />
+                    <Legend iconType="circle" />
+                    <Bar dataKey="income" fill="#8b5cf6" name="Income (IQD)" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="expenditure" fill="#ef4444" name="Expenditure (IQD)" radius={[4, 4, 0, 0]} />
                 </BarChart>
             </ResponsiveContainer>
         </div>
